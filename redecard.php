@@ -77,13 +77,28 @@ function VoidTransaction($dados)
 
 function Cupom($dados)
 {
-	$CAMPOS = array(
-		'Data', 'Transacao', 'NumCV', 'NumAutor', 'Filiacao'
+	$campos = array(
+		'DATA' => $dados['Data'], 
+		'TRANSACAO' => 201, 
+		'NUMCV' => $dados['NumCV'], 
+		'NUMAUTOR' => $dados['NumAutor'], 
+		'FILIACAO' => $dados['Filiacao']
 	);
 
-	//
-	//return	komerci_gen_ws( "https://ecommerce.redecard.com.br/pos_virtual/cupom.asp", "Cupom", $CAMPOS, $DADOS );
-	return	komerci_gen_ws("https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx", "Cupom", $campos, $dados);
+	// chamada à url
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, "https://ecommerce.redecard.com.br/pos_virtual/cupom.asp");
+	curl_setopt($curl, CURLOPT_POST, true);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, $campos);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+	$result = curl_exec($curl);
+	curl_close($curl);
+	
+	// retorna
+	return	$result;
 }
 
 ?>
