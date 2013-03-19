@@ -1,11 +1,13 @@
-Biblioteca PHP para acesso ‡ plataforma Komerci da Redecard
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/d27098cf2e9f554fc7fb6a8beb98b719 "githalytics.com")](http://githalytics.com/loureirorg/php-komerci)
 
-Por enquanto apenas as seguintes funÁıes est„o disponÌveis (vender, cancelar venda, visualizar cupom):
+Biblioteca PHP para acesso √† plataforma Komerci da Redecard
+
+Por enquanto apenas as seguintes fun√ß√µes est√£o dispon√≠veis (vender, cancelar venda, visualizar cupom):
 * GetAuthorized
 * VoidTransaction
 * Cupom
 
-Exemplo de impress„o de cupom:
+Exemplo de impress√£o de cupom:
 ```php
 <?php
 include("redecard.php");
