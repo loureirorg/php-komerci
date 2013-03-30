@@ -7,7 +7,7 @@
  * Copyleft 2013 - Public Domain
  * Original Author: Daniel Loureiro
  *
- * version 1.2a @ 2013-03-18
+ * version 1.2.2a @ 2013-03-30
  *
  * https://github.com/loureirorg/php-komerci
  *-------------------------------------------------------------------------
@@ -16,7 +16,7 @@
  * parcelamento (emissor ou estabelecimento) através da função "config_set()",
  * opção "parcelado_emissor", com o valor "true" ou "false". Ex.:
  *
- * 		komerci\config_set("parcelado_emissor", true);
+ * 		komerci\config("parcelado_emissor", true);
  *
  * ATENÇÃO II: Lembre-se de liberar o IP do server juntamente com a Redecard,
  * caso contrário algumas funções retornarão erro 56 - "dados inválidos".
@@ -57,7 +57,7 @@ $_komerci_config = array(
 function config()
 {
 	global $_komerci_config;
-	$config = (func_num_args() == 1)? func_get_arg(0): array("'". func_get_arg(0) ."'" => func_get_arg(1));
+	$config = (func_num_args() == 1)? func_get_arg(0): array(func_get_arg(0) => func_get_arg(1));
 	$_komerci_config = array_merge($_komerci_config, $config);
 }
 
