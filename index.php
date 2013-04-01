@@ -1,11 +1,9 @@
 <?php
-include("redecard.php");
+include "komerci.php";
+use komerci;
 
+komerci\config("filiacao", "012345678");
+komerci\config("senha", "minha senha secreta");
 
-print_r(Cupom(array(
-	'Data' => '20121031', 
-	'NumCV' => '123456789', 
-	'NumAutor' => '123456', 
-	'Filiacao' => '123456789' 
-)));
+print_r(komerci\comprovante("123456789", "123456", "20121031"));
 ?>
