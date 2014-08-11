@@ -3,7 +3,7 @@
 Biblioteca PHP para acesso à plataforma Komerci da Redecard
 
 ##3D Secure
-dúvidas sobre o 3D Secure, use a issue #1
+dúvidas sobre o 3D Secure, use a [issue #1](https://github.com/loureirorg/php-komerci/issues/1)
 
 ##Colabore
 se você tem alguma dúvida, crítica, pedido ou sugestão de melhoria, use a seção "Issues" do GitHub: https://github.com/loureirorg/php-komerci/issues
